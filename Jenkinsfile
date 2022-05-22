@@ -23,7 +23,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh "cd vote && sudo docker build . -t 334982178958.dkr.ecr.us-east-1.amazonaws.com/vote:\${BUILD_NUMBER}"
-                sh "sudo docker push 334982178958.dkr.ecr.us-east-1.amazonaws.com/vote:latest:\${BUILD_NUMBER}"
+                sh "sudo docker push 334982178958.dkr.ecr.us-east-1.amazonaws.com/vote:\${BUILD_NUMBER}"
             }
         }
         stage('Deploy in ECS') {
